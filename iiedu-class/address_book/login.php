@@ -22,7 +22,7 @@ if( isset($_POST['username']) && isset($_POST['pwd']) ){
     $pdo_stmt = $pdo->prepare($sql);
     $pdo_stmt->execute($arrParam);
 
-    if( $pdo_stmt->rowCount() > 0 ){
+    if( $pdo_stmt->rowCount() > 0 ){ // rowCount() 來得知是否UPDATE與INSERT成功.
         //3 秒後跳頁
         header("Refresh: 3; url=./admin.php");
         
